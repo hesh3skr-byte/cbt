@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untangle - Your Mental Wellness Companion</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <div class="nav-content">
+            <h1 class="logo">🌿 Untangle</h1>
+            <div class="nav-links">
+                <button class="nav-btn active" data-view="home">Home</button>
+                <button class="nav-btn" data-view="untangle">Untangle</button>
+                <button class="nav-btn" data-view="mood">Mood Check</button>
+                <button class="nav-btn" data-view="calm">Calm Corner</button>
+                <button class="nav-btn" data-view="journal">Journal</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <main class="container">
+
+        <!-- Home View -->
+        <section id="home" class="view active">
+            <div class="hero">
+                <h2 class="hero-title">Welcome to Untangle</h2>
+                <p class="hero-subtitle">A gentle space to understand your thoughts and feelings</p>
+
+                <div class="feature-cards">
+                    <div class="card" onclick="switchView('untangle')">
+                        <div class="card-icon">🧠</div>
+                        <h3>Thought Untangler</h3>
+                        <p>Explore and reframe unhelpful thinking patterns</p>
+                    </div>
+
+                    <div class="card" onclick="switchView('mood')">
+                        <div class="card-icon">💙</div>
+                        <h3>Mood Check-In</h3>
+                        <p>Track how you're feeling right now</p>
+                    </div>
+
+                    <div class="card" onclick="switchView('calm')">
+                        <div class="card-icon">🌸</div>
+                        <h3>Calm Corner</h3>
+                        <p>Grounding exercises to center yourself</p>
+                    </div>
+
+                    <div class="card" onclick="switchView('journal')">
+                        <div class="card-icon">📖</div>
+                        <h3>Your Journal</h3>
+                        <p>Reflect on your progress and insights</p>
+                    </div>
+                </div>
+
+                <div class="welcome-message">
+                    <p><strong>You're not alone.</strong> This tool uses Cognitive Behavioral Therapy (CBT) principles to help you recognize and shift unhelpful thought patterns.</p>
+                    <p class="privacy-note">🔒 All your data stays private on your device. Nothing is sent to servers.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Thought Untangler View -->
+        <section id="untangle" class="view">
+            <div class="content-header">
+                <h2>🧠 Thought Untangler</h2>
+                <p>Let's gently explore what's on your mind</p>
+            </div>
+
+            <div class="thought-journey">
+                <!-- Step 1: Situation -->
+                <div class="step active" data-step="1">
+                    <h3>What's happening?</h3>
+                    <p class="step-description">Describe the situation that's bothering you. Just the facts, like you're reporting it to a friend.</p>
+                    <textarea
+                        id="situation"
+                        class="input-field"
+                        placeholder="Example: My friend didn't respond to my text for 2 days..."
+                        rows="4"></textarea>
+                    <button class="btn btn-primary" onclick="nextStep(2)">Continue</button>
+                </div>
+
+                <!-- Step 2: Thoughts -->
+                <div class="step" data-step="2">
+                    <h3>What thoughts came up?</h3>
+                    <p class="step-description">What went through your mind? Write down the automatic thoughts, even if they seem irrational.</p>
+                    <textarea
+                        id="thoughts"
+                        class="input-field"
+                        placeholder="Example: They're mad at me. I must have done something wrong. They don't care about me..."
+                        rows="5"></textarea>
+                    <div class="step-nav">
+                        <button class="btn btn-secondary" onclick="prevStep(1)">Back</button>
+                        <button class="btn btn-primary" onclick="nextStep(3)">Continue</button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Emotions -->
+                <div class="step" data-step="3">
+                    <h3>How did this make you feel?</h3>
+                    <p class="step-description">Name the emotions. You can select multiple.</p>
+                    <div class="emotion-grid">
+                        <label class="emotion-chip">
+                            <input type="checkbox" name="emotion" value="anxious">
+                            <span>Anxious</span>
+                        </label>
+                        <label class="emotion-chip">
+                            <input type="checkbox" name="emotion" value="sad">
+                            <span>Sad</span>
+                        </label>
+                        <label class="emotion-chip">
+                            <input type="checkbox" name="emotion" value="angry">
+                            <span>Angry</span>
+                        </label>
+                        <label class="emotion-chip">
+                            <input type="checkbox" name="emotion" value="worried">
+                            <span>Worried</span>
+                        </label>
+                        <label class="emotion-chip">
+                            <input type="checkbox" name="emotion" value="fearful">
+                            <span>Fearful</span>
+                        </label>
+                        <label class="emotion-chip">
+                            <input type="checkbox" name="emotion" value="guilty">
+                            <span>Guilty</span>
+                        </label>
+                        <label class="emotion-chip">
+                            <input type="checkbox" name="emotion" value="ashamed">
+                            <span>Ashamed</span>
+                        </label>
+                        <label class="emotion-chip">
+                            <input type="checkbox" name="emotion" value="frustrated">
+                            <span>Frustrated</span>
+                        </label>
+                        <label class="emotion-chip">
+                            <input type="checkbox" name="emotion" value="overwhelmed">
+                            <span>Overwhelmed</span>
+                        </label>
+                        <label class="emotion-chip">
+                            <input type="checkbox" name="emotion" value="lonely">
+                            <span>Lonely</span>
+                        </label>
+                    </div>
+                    <label class="intensity-label">
+                        How intense? (1-10)
+                        <input type="range" id="emotionIntensity" min="1" max="10" value="5" class="slider">
+                        <span id="intensityValue">5</span>
+                    </label>
+                    <div class="step-nav">
+                        <button class="btn btn-secondary" onclick="prevStep(2)">Back</button>
+                        <button class="btn btn-primary" onclick="nextStep(4)">Continue</button>
+                    </div>
+                </div>
+
+                <!-- Step 4: Cognitive Distortions -->
+                <div class="step" data-step="4">
+                    <h3>Let's spot thinking traps</h3>
+                    <p class="step-description">Do any of these patterns sound familiar? These are common ways our minds can trick us.</p>
+                    <div class="distortions-list">
+                        <label class="distortion-item">
+                            <input type="checkbox" name="distortion" value="all-or-nothing">
+                            <div class="distortion-content">
+                                <strong>All-or-Nothing Thinking</strong>
+                                <span>Seeing things in black and white - if it's not perfect, it's a failure</span>
+                            </div>
+                        </label>
+                        <label class="distortion-item">
+                            <input type="checkbox" name="distortion" value="catastrophizing">
+                            <div class="distortion-content">
+                                <strong>Catastrophizing</strong>
+                                <span>Expecting the worst possible outcome</span>
+                            </div>
+                        </label>
+                        <label class="distortion-item">
+                            <input type="checkbox" name="distortion" value="mind-reading">
+                            <div class="distortion-content">
+                                <strong>Mind Reading</strong>
+                                <span>Assuming you know what others are thinking</span>
+                            </div>
+                        </label>
+                        <label class="distortion-item">
+                            <input type="checkbox" name="distortion" value="overgeneralization">
+                            <div class="distortion-content">
+                                <strong>Overgeneralization</strong>
+                                <span>One negative event means everything will go wrong</span>
+                            </div>
+                        </label>
+                        <label class="distortion-item">
+                            <input type="checkbox" name="distortion" value="personalization">
+                            <div class="distortion-content">
+                                <strong>Personalization</strong>
+                                <span>Blaming yourself for things outside your control</span>
+                            </div>
+                        </label>
+                        <label class="distortion-item">
+                            <input type="checkbox" name="distortion" value="should-statements">
+                            <div class="distortion-content">
+                                <strong>"Should" Statements</strong>
+                                <span>Rigid rules about how you or others "should" behave</span>
+                            </div>
+                        </label>
+                        <label class="distortion-item">
+                            <input type="checkbox" name="distortion" value="emotional-reasoning">
+                            <div class="distortion-content">
+                                <strong>Emotional Reasoning</strong>
+                                <span>Believing that feelings reflect reality ("I feel worthless, so I must be worthless")</span>
+                            </div>
+                        </label>
+                        <label class="distortion-item">
+                            <input type="checkbox" name="distortion" value="fortune-telling">
+                            <div class="distortion-content">
+                                <strong>Fortune Telling</strong>
+                                <span>Predicting negative outcomes without evidence</span>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="step-nav">
+                        <button class="btn btn-secondary" onclick="prevStep(3)">Back</button>
+                        <button class="btn btn-primary" onclick="nextStep(5)">Continue</button>
+                    </div>
+                </div>
+
+                <!-- Step 5: Evidence -->
+                <div class="step" data-step="5">
+                    <h3>Let's examine the evidence</h3>
+                    <p class="step-description">Think like a detective. What supports your thought? What contradicts it?</p>
+                    <div class="evidence-container">
+                        <div class="evidence-section">
+                            <label>Evidence FOR the thought</label>
+                            <textarea
+                                id="evidenceFor"
+                                class="input-field"
+                                placeholder="What makes you think this is true?"
+                                rows="4"></textarea>
+                        </div>
+                        <div class="evidence-section">
+                            <label>Evidence AGAINST the thought</label>
+                            <textarea
+                                id="evidenceAgainst"
+                                class="input-field"
+                                placeholder="What suggests this might not be entirely true? What would a friend say?"
+                                rows="4"></textarea>
+                        </div>
+                    </div>
+                    <div class="step-nav">
+                        <button class="btn btn-secondary" onclick="prevStep(4)">Back</button>
+                        <button class="btn btn-primary" onclick="nextStep(6)">Continue</button>
+                    </div>
+                </div>
+
+                <!-- Step 6: Reframe -->
+                <div class="step" data-step="6">
+                    <h3>Creating a balanced perspective</h3>
+                    <p class="step-description">Based on all the evidence, what's a more balanced, realistic way to think about this?</p>
+                    <textarea
+                        id="reframe"
+                        class="input-field"
+                        placeholder="Example: While it's frustrating they haven't responded, there could be many reasons unrelated to me. They might be busy, dealing with something personal, or simply forgot. I can check in kindly rather than assume the worst."
+                        rows="6"></textarea>
+                    <label class="intensity-label">
+                        How much do you believe this new thought? (1-10)
+                        <input type="range" id="beliefRating" min="1" max="10" value="5" class="slider">
+                        <span id="beliefValue">5</span>
+                    </label>
+                    <div class="step-nav">
+                        <button class="btn btn-secondary" onclick="prevStep(5)">Back</button>
+                        <button class="btn btn-primary" onclick="saveThoughtRecord()">Save & Reflect</button>
+                    </div>
+                </div>
+
+                <!-- Step 7: Summary -->
+                <div class="step" data-step="7">
+                    <div class="completion-message">
+                        <div class="completion-icon">✨</div>
+                        <h3>Beautiful work!</h3>
+                        <p>You've untangled a difficult thought. This is the practice that builds resilience.</p>
+                    </div>
+                    <div class="summary-card" id="summaryCard"></div>
+                    <div class="step-nav">
+                        <button class="btn btn-primary" onclick="startNewThought()">Untangle Another Thought</button>
+                        <button class="btn btn-secondary" onclick="switchView('journal')">View Journal</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mood Check View -->
+        <section id="mood" class="view">
+            <div class="content-header">
+                <h2>💙 Mood Check-In</h2>
+                <p>How are you feeling right now?</p>
+            </div>
+
+            <div class="mood-tracker">
+                <div class="mood-selector">
+                    <h3>Choose your mood</h3>
+                    <div class="mood-options">
+                        <button class="mood-btn" data-mood="great" onclick="selectMood('great')">
+                            <span class="mood-emoji">😊</span>
+                            <span>Great</span>
+                        </button>
+                        <button class="mood-btn" data-mood="good" onclick="selectMood('good')">
+                            <span class="mood-emoji">🙂</span>
+                            <span>Good</span>
+                        </button>
+                        <button class="mood-btn" data-mood="okay" onclick="selectMood('okay')">
+                            <span class="mood-emoji">😐</span>
+                            <span>Okay</span>
+                        </button>
+                        <button class="mood-btn" data-mood="low" onclick="selectMood('low')">
+                            <span class="mood-emoji">😔</span>
+                            <span>Low</span>
+                        </button>
+                        <button class="mood-btn" data-mood="struggling" onclick="selectMood('struggling')">
+                            <span class="mood-emoji">😢</span>
+                            <span>Struggling</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div id="moodDetails" class="mood-details hidden">
+                    <label>What's contributing to this feeling? (optional)</label>
+                    <textarea id="moodNote" class="input-field" rows="3" placeholder="You can add a note about what's influencing your mood..."></textarea>
+                    <button class="btn btn-primary" onclick="saveMood()">Save Check-In</button>
+                </div>
+
+                <div id="moodHistory" class="mood-history">
+                    <h3>Recent Check-Ins</h3>
+                    <div id="moodList" class="mood-list"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calm Corner View -->
+        <section id="calm" class="view">
+            <div class="content-header">
+                <h2>🌸 Calm Corner</h2>
+                <p>Gentle exercises to ground and center yourself</p>
+            </div>
+
+            <div class="calm-exercises">
+                <div class="exercise-card">
+                    <h3>🌬️ Breathing Exercise</h3>
+                    <p>Follow the gentle rhythm</p>
+                    <div class="breathing-container">
+                        <div id="breathingCircle" class="breathing-circle"></div>
+                        <div id="breathingText" class="breathing-text">Click Start</div>
+                    </div>
+                    <button id="breathingBtn" class="btn btn-primary" onclick="startBreathing()">Start</button>
+                </div>
+
+                <div class="exercise-card">
+                    <h3>🔢 5-4-3-2-1 Grounding</h3>
+                    <p>Bring yourself back to the present moment</p>
+                    <div class="grounding-exercise">
+                        <div class="grounding-step">
+                            <strong>5 things you can SEE</strong>
+                            <textarea class="input-field grounding-input" placeholder="Look around... what do you notice?" rows="2"></textarea>
+                        </div>
+                        <div class="grounding-step">
+                            <strong>4 things you can TOUCH</strong>
+                            <textarea class="input-field grounding-input" placeholder="What textures are around you?" rows="2"></textarea>
+                        </div>
+                        <div class="grounding-step">
+                            <strong>3 things you can HEAR</strong>
+                            <textarea class="input-field grounding-input" placeholder="What sounds are present?" rows="2"></textarea>
+                        </div>
+                        <div class="grounding-step">
+                            <strong>2 things you can SMELL</strong>
+                            <textarea class="input-field grounding-input" placeholder="Any scents in the air?" rows="2"></textarea>
+                        </div>
+                        <div class="grounding-step">
+                            <strong>1 thing you can TASTE</strong>
+                            <textarea class="input-field grounding-input" placeholder="What do you taste?" rows="2"></textarea>
+                        </div>
+                    </div>
+                    <p class="exercise-note">Take your time with each sense. Notice how you feel more present.</p>
+                </div>
+
+                <div class="exercise-card">
+                    <h3>💭 Affirmations</h3>
+                    <p>Gentle reminders for difficult moments</p>
+                    <div class="affirmations">
+                        <blockquote id="affirmationText" class="affirmation-text"></blockquote>
+                        <button class="btn btn-secondary" onclick="newAffirmation()">Show Another</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Journal View -->
+        <section id="journal" class="view">
+            <div class="content-header">
+                <h2>📖 Your Journal</h2>
+                <p>Your journey of growth and insight</p>
+            </div>
+
+            <div class="journal-container">
+                <div class="journal-stats">
+                    <div class="stat-card">
+                        <div class="stat-number" id="totalEntries">0</div>
+                        <div class="stat-label">Thoughts Untangled</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="totalMoods">0</div>
+                        <div class="stat-label">Mood Check-Ins</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="streakDays">0</div>
+                        <div class="stat-label">Day Streak</div>
+                    </div>
+                </div>
+
+                <div class="journal-entries">
+                    <h3>Recent Entries</h3>
+                    <div id="journalList" class="entries-list"></div>
+                </div>
+
+                <div class="journal-actions">
+                    <button class="btn btn-secondary" onclick="exportData()">Export Your Data</button>
+                    <button class="btn btn-danger" onclick="confirmClearData()">Clear All Data</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>💚 This is not a replacement for professional mental health support. If you're in crisis, please reach out to a mental health professional or crisis helpline.</p>
+        <p class="crisis-link"><a href="https://988lifeline.org" target="_blank">988 Suicide & Crisis Lifeline</a> • <a href="https://www.crisistextline.org" target="_blank">Crisis Text Line: Text HOME to 741741</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
