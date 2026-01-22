@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untangle - Your Mental Wellness Companion</title>
+    <style>
+        :root{--color-primary:#8B7FD6;--color-primary-light:#A599E0;--color-primary-dark:#6B5FB6;--color-secondary:#7BC6A4;--color-secondary-light:#9FD9BF;--color-accent:#F4A5C4;--color-bg:#F8F9FD;--color-surface:#FFF;--color-text:#2D3748;--color-text-light:#718096;--color-border:#E2E8F0;--color-success:#7BC6A4;--color-warning:#F6C77E;--color-danger:#EF8D8D;--shadow-sm:0 2px 8px rgba(139,127,214,.08);--shadow-md:0 4px 16px rgba(139,127,214,.12);--shadow-lg:0 8px 32px rgba(139,127,214,.16);--radius-sm:8px;--radius-md:12px;--radius-lg:20px;--transition:all .3s cubic-bezier(.4,0,.2,1)}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;background:linear-gradient(135deg,#F8F9FD 0%,#E8EDFA 100%);color:var(--color-text);line-height:1.6;min-height:100vh;overflow-x:hidden}.nav-bar{background:var(--color-surface);box-shadow:var(--shadow-sm);position:sticky;top:0;z-index:100;border-bottom:1px solid var(--color-border)}.nav-content{max-width:1200px;margin:0 auto;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}.logo{font-size:1.5rem;font-weight:700;color:var(--color-primary);margin:0}.nav-links{display:flex;gap:.5rem;flex-wrap:wrap}.nav-btn{background:0 0;border:none;padding:.5rem 1rem;color:var(--color-text-light);font-size:.95rem;font-weight:500;cursor:pointer;border-radius:var(--radius-sm);transition:var(--transition)}.nav-btn:hover{background:var(--color-bg);color:var(--color-primary)}.nav-btn.active{background:var(--color-primary);color:#fff}.container{max-width:1200px;margin:0 auto;padding:2rem;min-height:calc(100vh - 200px)}.view{display:none;animation:fadeIn .5s ease}.view.active{display:block}@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}.content-header{text-align:center;margin-bottom:3rem}.content-header h2{font-size:2.5rem;color:var(--color-primary);margin-bottom:.5rem}.content-header p{color:var(--color-text-light);font-size:1.1rem}.hero{text-align:center}.hero-title{font-size:3rem;background:linear-gradient(135deg,var(--color-primary) 0%,var(--color-secondary) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:.5rem}.hero-subtitle{font-size:1.3rem;color:var(--color-text-light);margin-bottom:3rem}.feature-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem;margin-bottom:3rem}.card{background:var(--color-surface);padding:2rem;border-radius:var(--radius-lg);box-shadow:var(--shadow-md);cursor:pointer;transition:var(--transition);border:2px solid transparent}.card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg);border-color:var(--color-primary)}.card-icon{font-size:3rem;margin-bottom:1rem}.card h3{color:var(--color-primary);margin-bottom:.5rem;font-size:1.3rem}.card p{color:var(--color-text-light);font-size:.95rem}.welcome-message{background:linear-gradient(135deg,var(--color-primary) 0%,var(--color-primary-light) 100%);color:#fff;padding:2rem;border-radius:var(--radius-lg);margin-top:2rem}.welcome-message strong{font-size:1.2rem}.privacy-note{margin-top:1rem;opacity:.9;font-size:.9rem}.thought-journey{max-width:800px;margin:0 auto}.step{display:none;background:var(--color-surface);padding:2.5rem;border-radius:var(--radius-lg);box-shadow:var(--shadow-md);animation:slideIn .4s ease}.step.active{display:block}@keyframes slideIn{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)}}.step h3{font-size:1.8rem;color:var(--color-primary);margin-bottom:.5rem}.step-description{color:var(--color-text-light);margin-bottom:1.5rem}.input-field{width:100%;padding:1rem;border:2px solid var(--color-border);border-radius:var(--radius-md);font-family:inherit;font-size:1rem;color:var(--color-text);transition:var(--transition);resize:vertical}.input-field:focus{outline:0;border-color:var(--color-primary);box-shadow:0 0 0 3px rgba(139,127,214,.1)}.input-field::placeholder{color:var(--color-text-light);opacity:.6}.btn{padding:.875rem 2rem;border:none;border-radius:var(--radius-md);font-size:1rem;font-weight:600;cursor:pointer;transition:var(--transition);font-family:inherit}.btn-primary{background:var(--color-primary);color:#fff}.btn-primary:hover{background:var(--color-primary-dark);transform:translateY(-2px);box-shadow:var(--shadow-md)}.btn-secondary{background:var(--color-bg);color:var(--color-primary);border:2px solid var(--color-primary)}.btn-secondary:hover{background:var(--color-primary);color:#fff}.btn-danger{background:var(--color-danger);color:#fff}.btn-danger:hover{background:#E57373}.step-nav{display:flex;gap:1rem;margin-top:2rem;flex-wrap:wrap}.emotion-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:1rem;margin-bottom:1.5rem}.emotion-chip{display:block;cursor:pointer}.emotion-chip input{display:none}.emotion-chip span{display:block;padding:1rem;background:var(--color-bg);border:2px solid var(--color-border);border-radius:var(--radius-md);text-align:center;font-weight:500;transition:var(--transition)}.emotion-chip:hover span{border-color:var(--color-primary);background:var(--color-surface)}.emotion-chip input:checked+span{background:var(--color-primary);color:#fff;border-color:var(--color-primary)}.intensity-label{display:block;margin:1.5rem 0;font-weight:500}.slider{width:100%;height:8px;border-radius:5px;background:var(--color-border);outline:0;margin:1rem 0;-webkit-appearance:none}.slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:24px;height:24px;border-radius:50%;background:var(--color-primary);cursor:pointer;box-shadow:var(--shadow-sm)}.slider::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:var(--color-primary);cursor:pointer;box-shadow:var(--shadow-sm);border:none}#intensityValue,#beliefValue{display:inline-block;margin-left:1rem;font-size:1.2rem;font-weight:700;color:var(--color-primary)}.distortions-list{display:flex;flex-direction:column;gap:1rem;margin-bottom:1.5rem}.distortion-item{display:flex;align-items:flex-start;gap:1rem;padding:1rem;background:var(--color-bg);border:2px solid var(--color-border);border-radius:var(--radius-md);cursor:pointer;transition:var(--transition)}.distortion-item:hover{border-color:var(--color-primary)}.distortion-item input{margin-top:4px;width:20px;height:20px;cursor:pointer}.distortion-item input:checked~.distortion-content{color:var(--color-primary)}.distortion-content{flex:1}.distortion-content strong{display:block;margin-bottom:.25rem;color:var(--color-text)}.distortion-content span{color:var(--color-text-light);font-size:.9rem}.evidence-container{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem}.evidence-section label{display:block;font-weight:600;color:var(--color-primary);margin-bottom:.5rem}@media (max-width:768px){.evidence-container{grid-template-columns:1fr}}.completion-message{text-align:center;margin-bottom:2rem}.completion-icon{font-size:4rem;margin-bottom:1rem;animation:celebration .6s ease}@keyframes celebration{0%,100%{transform:scale(1) rotate(0)}25%{transform:scale(1.2) rotate(-10deg)}75%{transform:scale(1.2) rotate(10deg)}}.completion-message h3{font-size:2rem;color:var(--color-primary);margin-bottom:.5rem}.summary-card{background:linear-gradient(135deg,var(--color-primary-light) 0%,var(--color-secondary-light) 100%);padding:2rem;border-radius:var(--radius-lg);color:var(--color-text);margin-bottom:2rem}.summary-card h4{color:var(--color-primary-dark);margin-bottom:.5rem;margin-top:1rem}.summary-card h4:first-child{margin-top:0}.summary-card p{margin:.5rem 0}.summary-card ul{margin-left:1.5rem}.mood-tracker{max-width:700px;margin:0 auto}.mood-selector{background:var(--color-surface);padding:2rem;border-radius:var(--radius-lg);box-shadow:var(--shadow-md);margin-bottom:2rem}.mood-selector h3{text-align:center;color:var(--color-primary);margin-bottom:1.5rem}.mood-options{display:flex;justify-content:space-around;gap:1rem;flex-wrap:wrap}.mood-btn{display:flex;flex-direction:column;align-items:center;gap:.5rem;padding:1.5rem 1rem;background:var(--color-bg);border:3px solid var(--color-border);border-radius:var(--radius-md);cursor:pointer;transition:var(--transition);min-width:100px}.mood-btn:hover{transform:translateY(-5px);border-color:var(--color-primary)}.mood-btn.selected{background:var(--color-primary);color:#fff;border-color:var(--color-primary)}.mood-emoji{font-size:2.5rem}.mood-btn span:last-child{font-weight:600}.mood-details{background:var(--color-surface);padding:2rem;border-radius:var(--radius-lg);box-shadow:var(--shadow-md);margin-bottom:2rem}.mood-details.hidden{display:none}.mood-details label{display:block;font-weight:600;color:var(--color-primary);margin-bottom:.5rem}.mood-history{background:var(--color-surface);padding:2rem;border-radius:var(--radius-lg);box-shadow:var(--shadow-md)}.mood-history h3{color:var(--color-primary);margin-bottom:1rem}.mood-list{display:flex;flex-direction:column;gap:1rem}.mood-entry{display:flex;align-items:center;gap:1rem;padding:1rem;background:var(--color-bg);border-radius:var(--radius-md);border-left:4px solid var(--color-primary)}.mood-entry-emoji{font-size:2rem}.mood-entry-content{flex:1}.mood-entry-mood{font-weight:600;color:var(--color-primary);text-transform:capitalize}.mood-entry-date{font-size:.85rem;color:var(--color-text-light)}.mood-entry-note{font-size:.9rem;color:var(--color-text);margin-top:.25rem}.calm-exercises{display:grid;gap:2rem;max-width:900px;margin:0 auto}.exercise-card{background:var(--color-surface);padding:2rem;border-radius:var(--radius-lg);box-shadow:var(--shadow-md)}.exercise-card h3{color:var(--color-primary);margin-bottom:.5rem;font-size:1.5rem}.exercise-card>p{color:var(--color-text-light);margin-bottom:1.5rem}.breathing-container{display:flex;flex-direction:column;align-items:center;padding:2rem;min-height:300px;justify-content:center}.breathing-circle{width:150px;height:150px;border-radius:50%;background:linear-gradient(135deg,var(--color-primary) 0%,var(--color-secondary) 100%);margin-bottom:2rem;box-shadow:var(--shadow-lg)}.breathing-circle.breathe-in{animation:breatheIn 4s ease-in-out}.breathing-circle.breathe-out{animation:breatheOut 4s ease-in-out}@keyframes breatheIn{from{transform:scale(1)}to{transform:scale(1.5)}}@keyframes breatheOut{from{transform:scale(1.5)}to{transform:scale(1)}}.breathing-text{font-size:1.5rem;font-weight:600;color:var(--color-primary);text-align:center}#breathingBtn{margin-top:1rem}.grounding-exercise{display:flex;flex-direction:column;gap:1.5rem}.grounding-step strong{display:block;color:var(--color-primary);margin-bottom:.5rem;font-size:1.1rem}.grounding-input{font-size:.95rem}.exercise-note{margin-top:1rem;padding:1rem;background:var(--color-bg);border-left:4px solid var(--color-secondary);border-radius:var(--radius-sm);color:var(--color-text-light);font-style:italic}.affirmations{text-align:center;padding:2rem}.affirmation-text{font-size:1.5rem;font-style:italic;color:var(--color-primary);line-height:1.8;margin:2rem 0;padding:2rem;background:linear-gradient(135deg,rgba(139,127,214,.1) 0%,rgba(123,198,164,.1) 100%);border-radius:var(--radius-lg);border-left:4px solid var(--color-primary)}.journal-container{max-width:900px;margin:0 auto}.journal-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;margin-bottom:2rem}.stat-card{background:var(--color-surface);padding:2rem;border-radius:var(--radius-lg);box-shadow:var(--shadow-md);text-align:center}.stat-number{font-size:3rem;font-weight:700;background:linear-gradient(135deg,var(--color-primary) 0%,var(--color-secondary) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}.stat-label{color:var(--color-text-light);font-weight:500;margin-top:.5rem}.journal-entries{background:var(--color-surface);padding:2rem;border-radius:var(--radius-lg);box-shadow:var(--shadow-md);margin-bottom:2rem}.journal-entries h3{color:var(--color-primary);margin-bottom:1.5rem}.entries-list{display:flex;flex-direction:column;gap:1rem}.entry-item{padding:1.5rem;background:var(--color-bg);border-radius:var(--radius-md);border-left:4px solid var(--color-primary);cursor:pointer;transition:var(--transition)}.entry-item:hover{background:#fff;box-shadow:var(--shadow-sm)}.entry-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem}.entry-type{font-weight:600;color:var(--color-primary)}.entry-date{font-size:.85rem;color:var(--color-text-light)}.entry-preview{color:var(--color-text);font-size:.95rem}.journal-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}.footer{background:var(--color-surface);padding:2rem;text-align:center;border-top:1px solid var(--color-border);margin-top:4rem}.footer p{color:var(--color-text-light);font-size:.9rem;margin:.5rem 0}.crisis-link a{color:var(--color-primary);text-decoration:none;font-weight:600}.crisis-link a:hover{text-decoration:underline}.hidden{display:none!important}@media (max-width:768px){.container{padding:1rem}.nav-content{padding:1rem}.nav-links{width:100%;justify-content:center}.hero-title{font-size:2rem}.hero-subtitle{font-size:1.1rem}.content-header h2{font-size:2rem}.feature-cards{grid-template-columns:1fr}.step{padding:1.5rem}.step h3{font-size:1.5rem}.mood-options{flex-direction:column}.mood-btn{width:100%}.step-nav{flex-direction:column}.step-nav .btn{width:100%}}@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+    </style>
+</head>
+<body>
+    <nav class="nav-bar">
+        <div class="nav-content">
+            <h1 class="logo">🌿 Untangle</h1>
+            <div class="nav-links">
+                <button class="nav-btn active" data-view="home">Home</button>
+                <button class="nav-btn" data-view="untangle">Untangle</button>
+                <button class="nav-btn" data-view="mood">Mood Check</button>
+                <button class="nav-btn" data-view="calm">Calm Corner</button>
+                <button class="nav-btn" data-view="journal">Journal</button>
+            </div>
+        </div>
+    </nav>
+    <main class="container">
+        <section id="home" class="view active">
+            <div class="hero">
+                <h2 class="hero-title">Welcome to Untangle</h2>
+                <p class="hero-subtitle">A gentle space to understand your thoughts and feelings</p>
+                <div class="feature-cards">
+                    <div class="card" onclick="switchView('untangle')">
+                        <div class="card-icon">🧠</div>
+                        <h3>Thought Untangler</h3>
+                        <p>Explore and reframe unhelpful thinking patterns</p>
+                    </div>
+                    <div class="card" onclick="switchView('mood')">
+                        <div class="card-icon">💙</div>
+                        <h3>Mood Check-In</h3>
+                        <p>Track how you're feeling right now</p>
+                    </div>
+                    <div class="card" onclick="switchView('calm')">
+                        <div class="card-icon">🌸</div>
+                        <h3>Calm Corner</h3>
+                        <p>Grounding exercises to center yourself</p>
+                    </div>
+                    <div class="card" onclick="switchView('journal')">
+                        <div class="card-icon">📖</div>
+                        <h3>Your Journal</h3>
+                        <p>Reflect on your progress and insights</p>
+                    </div>
+                </div>
+                <div class="welcome-message">
+                    <p><strong>You're not alone.</strong> This tool uses Cognitive Behavioral Therapy (CBT) principles to help you recognize and shift unhelpful thought patterns.</p>
+                    <p class="privacy-note">🔒 All your data stays private on your device. Nothing is sent to servers.</p>
+                </div>
+            </div>
+        </section>
+        <section id="untangle" class="view">
+            <div class="content-header">
+                <h2>🧠 Thought Untangler</h2>
+                <p>Let's gently explore what's on your mind</p>
+            </div>
+            <div class="thought-journey">
+                <div class="step active" data-step="1">
+                    <h3>What's happening?</h3>
+                    <p class="step-description">Describe the situation that's bothering you. Just the facts, like you're reporting it to a friend.</p>
+                    <textarea id="situation" class="input-field" placeholder="Example: My friend didn't respond to my text for 2 days..." rows="4"></textarea>
+                    <button class="btn btn-primary" onclick="nextStep(2)">Continue</button>
+                </div>
+                <div class="step" data-step="2">
+                    <h3>What thoughts came up?</h3>
+                    <p class="step-description">What went through your mind? Write down the automatic thoughts, even if they seem irrational.</p>
+                    <textarea id="thoughts" class="input-field" placeholder="Example: They're mad at me. I must have done something wrong. They don't care about me..." rows="5"></textarea>
+                    <div class="step-nav">
+                        <button class="btn btn-secondary" onclick="prevStep(1)">Back</button>
+                        <button class="btn btn-primary" onclick="nextStep(3)">Continue</button>
+                    </div>
+                </div>
+                <div class="step" data-step="3">
+                    <h3>How did this make you feel?</h3>
+                    <p class="step-description">Name the emotions. You can select multiple.</p>
+                    <div class="emotion-grid">
+                        <label class="emotion-chip"><input type="checkbox" name="emotion" value="anxious"><span>Anxious</span></label>
+                        <label class="emotion-chip"><input type="checkbox" name="emotion" value="sad"><span>Sad</span></label>
+                        <label class="emotion-chip"><input type="checkbox" name="emotion" value="angry"><span>Angry</span></label>
+                        <label class="emotion-chip"><input type="checkbox" name="emotion" value="worried"><span>Worried</span></label>
+                        <label class="emotion-chip"><input type="checkbox" name="emotion" value="fearful"><span>Fearful</span></label>
+                        <label class="emotion-chip"><input type="checkbox" name="emotion" value="guilty"><span>Guilty</span></label>
+                        <label class="emotion-chip"><input type="checkbox" name="emotion" value="ashamed"><span>Ashamed</span></label>
+                        <label class="emotion-chip"><input type="checkbox" name="emotion" value="frustrated"><span>Frustrated</span></label>
+                        <label class="emotion-chip"><input type="checkbox" name="emotion" value="overwhelmed"><span>Overwhelmed</span></label>
+                        <label class="emotion-chip"><input type="checkbox" name="emotion" value="lonely"><span>Lonely</span></label>
+                    </div>
+                    <label class="intensity-label">
+                        How intense? (1-10)
+                        <input type="range" id="emotionIntensity" min="1" max="10" value="5" class="slider">
+                        <span id="intensityValue">5</span>
+                    </label>
+                    <div class="step-nav">
+                        <button class="btn btn-secondary" onclick="prevStep(2)">Back</button>
+                        <button class="btn btn-primary" onclick="nextStep(4)">Continue</button>
+                    </div>
+                </div>
+                <div class="step" data-step="4">
+                    <h3>Let's spot thinking traps</h3>
+                    <p class="step-description">Do any of these patterns sound familiar? These are common ways our minds can trick us.</p>
+                    <div class="distortions-list">
+                        <label class="distortion-item"><input type="checkbox" name="distortion" value="all-or-nothing"><div class="distortion-content"><strong>All-or-Nothing Thinking</strong><span>Seeing things in black and white - if it's not perfect, it's a failure</span></div></label>
+                        <label class="distortion-item"><input type="checkbox" name="distortion" value="catastrophizing"><div class="distortion-content"><strong>Catastrophizing</strong><span>Expecting the worst possible outcome</span></div></label>
+                        <label class="distortion-item"><input type="checkbox" name="distortion" value="mind-reading"><div class="distortion-content"><strong>Mind Reading</strong><span>Assuming you know what others are thinking</span></div></label>
+                        <label class="distortion-item"><input type="checkbox" name="distortion" value="overgeneralization"><div class="distortion-content"><strong>Overgeneralization</strong><span>One negative event means everything will go wrong</span></div></label>
+                        <label class="distortion-item"><input type="checkbox" name="distortion" value="personalization"><div class="distortion-content"><strong>Personalization</strong><span>Blaming yourself for things outside your control</span></div></label>
+                        <label class="distortion-item"><input type="checkbox" name="distortion" value="should-statements"><div class="distortion-content"><strong>"Should" Statements</strong><span>Rigid rules about how you or others "should" behave</span></div></label>
+                        <label class="distortion-item"><input type="checkbox" name="distortion" value="emotional-reasoning"><div class="distortion-content"><strong>Emotional Reasoning</strong><span>Believing that feelings reflect reality ("I feel worthless, so I must be worthless")</span></div></label>
+                        <label class="distortion-item"><input type="checkbox" name="distortion" value="fortune-telling"><div class="distortion-content"><strong>Fortune Telling</strong><span>Predicting negative outcomes without evidence</span></div></label>
+                    </div>
+                    <div class="step-nav">
+                        <button class="btn btn-secondary" onclick="prevStep(3)">Back</button>
+                        <button class="btn btn-primary" onclick="nextStep(5)">Continue</button>
+                    </div>
+                </div>
+                <div class="step" data-step="5">
+                    <h3>Let's examine the evidence</h3>
+                    <p class="step-description">Think like a detective. What supports your thought? What contradicts it?</p>
+                    <div class="evidence-container">
+                        <div class="evidence-section">
+                            <label>Evidence FOR the thought</label>
+                            <textarea id="evidenceFor" class="input-field" placeholder="What makes you think this is true?" rows="4"></textarea>
+                        </div>
+                        <div class="evidence-section">
+                            <label>Evidence AGAINST the thought</label>
+                            <textarea id="evidenceAgainst" class="input-field" placeholder="What suggests this might not be entirely true? What would a friend say?" rows="4"></textarea>
+                        </div>
+                    </div>
+                    <div class="step-nav">
+                        <button class="btn btn-secondary" onclick="prevStep(4)">Back</button>
+                        <button class="btn btn-primary" onclick="nextStep(6)">Continue</button>
+                    </div>
+                </div>
+                <div class="step" data-step="6">
+                    <h3>Creating a balanced perspective</h3>
+                    <p class="step-description">Based on all the evidence, what's a more balanced, realistic way to think about this?</p>
+                    <textarea id="reframe" class="input-field" placeholder="Example: While it's frustrating they haven't responded, there could be many reasons unrelated to me. They might be busy, dealing with something personal, or simply forgot. I can check in kindly rather than assume the worst." rows="6"></textarea>
+                    <label class="intensity-label">
+                        How much do you believe this new thought? (1-10)
+                        <input type="range" id="beliefRating" min="1" max="10" value="5" class="slider">
+                        <span id="beliefValue">5</span>
+                    </label>
+                    <div class="step-nav">
+                        <button class="btn btn-secondary" onclick="prevStep(5)">Back</button>
+                        <button class="btn btn-primary" onclick="saveThoughtRecord()">Save & Reflect</button>
+                    </div>
+                </div>
+                <div class="step" data-step="7">
+                    <div class="completion-message">
+                        <div class="completion-icon">✨</div>
+                        <h3>Beautiful work!</h3>
+                        <p>You've untangled a difficult thought. This is the practice that builds resilience.</p>
+                    </div>
+                    <div class="summary-card" id="summaryCard"></div>
+                    <div class="step-nav">
+                        <button class="btn btn-primary" onclick="startNewThought()">Untangle Another Thought</button>
+                        <button class="btn btn-secondary" onclick="switchView('journal')">View Journal</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="mood" class="view">
+            <div class="content-header">
+                <h2>💙 Mood Check-In</h2>
+                <p>How are you feeling right now?</p>
+            </div>
+            <div class="mood-tracker">
+                <div class="mood-selector">
+                    <h3>Choose your mood</h3>
+                    <div class="mood-options">
+                        <button class="mood-btn" data-mood="great" onclick="selectMood('great')"><span class="mood-emoji">😊</span><span>Great</span></button>
+                        <button class="mood-btn" data-mood="good" onclick="selectMood('good')"><span class="mood-emoji">🙂</span><span>Good</span></button>
+                        <button class="mood-btn" data-mood="okay" onclick="selectMood('okay')"><span class="mood-emoji">😐</span><span>Okay</span></button>
+                        <button class="mood-btn" data-mood="low" onclick="selectMood('low')"><span class="mood-emoji">😔</span><span>Low</span></button>
+                        <button class="mood-btn" data-mood="struggling" onclick="selectMood('struggling')"><span class="mood-emoji">😢</span><span>Struggling</span></button>
+                    </div>
+                </div>
+                <div id="moodDetails" class="mood-details hidden">
+                    <label>What's contributing to this feeling? (optional)</label>
+                    <textarea id="moodNote" class="input-field" rows="3" placeholder="You can add a note about what's influencing your mood..."></textarea>
+                    <button class="btn btn-primary" onclick="saveMood()">Save Check-In</button>
+                </div>
+                <div id="moodHistory" class="mood-history">
+                    <h3>Recent Check-Ins</h3>
+                    <div id="moodList" class="mood-list"></div>
+                </div>
+            </div>
+        </section>
+        <section id="calm" class="view">
+            <div class="content-header">
+                <h2>🌸 Calm Corner</h2>
+                <p>Gentle exercises to ground and center yourself</p>
+            </div>
+            <div class="calm-exercises">
+                <div class="exercise-card">
+                    <h3>🌬️ Breathing Exercise</h3>
+                    <p>Follow the gentle rhythm</p>
+                    <div class="breathing-container">
+                        <div id="breathingCircle" class="breathing-circle"></div>
+                        <div id="breathingText" class="breathing-text">Click Start</div>
+                    </div>
+                    <button id="breathingBtn" class="btn btn-primary" onclick="startBreathing()">Start</button>
+                </div>
+                <div class="exercise-card">
+                    <h3>🔢 5-4-3-2-1 Grounding</h3>
+                    <p>Bring yourself back to the present moment</p>
+                    <div class="grounding-exercise">
+                        <div class="grounding-step"><strong>5 things you can SEE</strong><textarea class="input-field grounding-input" placeholder="Look around... what do you notice?" rows="2"></textarea></div>
+                        <div class="grounding-step"><strong>4 things you can TOUCH</strong><textarea class="input-field grounding-input" placeholder="What textures are around you?" rows="2"></textarea></div>
+                        <div class="grounding-step"><strong>3 things you can HEAR</strong><textarea class="input-field grounding-input" placeholder="What sounds are present?" rows="2"></textarea></div>
+                        <div class="grounding-step"><strong>2 things you can SMELL</strong><textarea class="input-field grounding-input" placeholder="Any scents in the air?" rows="2"></textarea></div>
+                        <div class="grounding-step"><strong>1 thing you can TASTE</strong><textarea class="input-field grounding-input" placeholder="What do you taste?" rows="2"></textarea></div>
+                    </div>
+                    <p class="exercise-note">Take your time with each sense. Notice how you feel more present.</p>
+                </div>
+                <div class="exercise-card">
+                    <h3>💭 Affirmations</h3>
+                    <p>Gentle reminders for difficult moments</p>
+                    <div class="affirmations">
+                        <blockquote id="affirmationText" class="affirmation-text"></blockquote>
+                        <button class="btn btn-secondary" onclick="newAffirmation()">Show Another</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="journal" class="view">
+            <div class="content-header">
+                <h2>📖 Your Journal</h2>
+                <p>Your journey of growth and insight</p>
+            </div>
+            <div class="journal-container">
+                <div class="journal-stats">
+                    <div class="stat-card"><div class="stat-number" id="totalEntries">0</div><div class="stat-label">Thoughts Untangled</div></div>
+                    <div class="stat-card"><div class="stat-number" id="totalMoods">0</div><div class="stat-label">Mood Check-Ins</div></div>
+                    <div class="stat-card"><div class="stat-number" id="streakDays">0</div><div class="stat-label">Day Streak</div></div>
+                </div>
+                <div class="journal-entries">
+                    <h3>Recent Entries</h3>
+                    <div id="journalList" class="entries-list"></div>
+                </div>
+                <div class="journal-actions">
+                    <button class="btn btn-secondary" onclick="exportData()">Export Your Data</button>
+                    <button class="btn btn-danger" onclick="confirmClearData()">Clear All Data</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <p>💚 This is not a replacement for professional mental health support. If you're in crisis, please reach out to a mental health professional or crisis helpline.</p>
+        <p class="crisis-link"><a href="https://988lifeline.org" target="_blank">988 Suicide & Crisis Lifeline</a> • <a href="https://www.crisistextline.org" target="_blank">Crisis Text Line: Text HOME to 741741</a></p>
+    </footer>
+    <script>
+let currentThought={situation:'',thoughts:'',emotions:[],emotionIntensity:5,distortions:[],evidenceFor:'',evidenceAgainst:'',reframe:'',beliefRating:5,timestamp:null};let breathingInterval=null;let breathingState='stopped';document.addEventListener('DOMContentLoaded',function(){initializeApp()});function initializeApp(){setupNavigation();setupSliders();loadJournal();loadStats();loadMoodHistory();newAffirmation();loadDraft()}function setupNavigation(){const navButtons=document.querySelectorAll('.nav-btn');navButtons.forEach(btn=>{btn.addEventListener('click',function(){const view=this.getAttribute('data-view');switchView(view)})})}function switchView(viewName){document.querySelectorAll('.nav-btn').forEach(btn=>{btn.classList.remove('active');if(btn.getAttribute('data-view')===viewName){btn.classList.add('active')}});document.querySelectorAll('.view').forEach(view=>{view.classList.remove('active')});document.getElementById(viewName).classList.add('active');if(viewName==='journal'){loadJournal();loadStats()}if(viewName==='mood'){loadMoodHistory()}window.scrollTo({top:0,behavior:'smooth'})}function setupSliders(){const emotionSlider=document.getElementById('emotionIntensity');const intensityValue=document.getElementById('intensityValue');emotionSlider.addEventListener('input',function(){intensityValue.textContent=this.value});const beliefSlider=document.getElementById('beliefRating');const beliefValue=document.getElementById('beliefValue');beliefSlider.addEventListener('input',function(){beliefValue.textContent=this.value})}function nextStep(stepNumber){saveCurrentStepData(stepNumber-1);document.querySelectorAll('.step').forEach(step=>{step.classList.remove('active')});const nextStep=document.querySelector(`[data-step="${stepNumber}"]`);if(nextStep){nextStep.classList.add('active');nextStep.scrollIntoView({behavior:'smooth',block:'start'})}saveDraft()}function prevStep(stepNumber){document.querySelectorAll('.step').forEach(step=>{step.classList.remove('active')});const prevStep=document.querySelector(`[data-step="${stepNumber}"]`);if(prevStep){prevStep.classList.add('active');prevStep.scrollIntoView({behavior:'smooth',block:'start'})}}function saveCurrentStepData(stepNumber){switch(stepNumber){case 1:currentThought.situation=document.getElementById('situation').value;break;case 2:currentThought.thoughts=document.getElementById('thoughts').value;break;case 3:currentThought.emotions=Array.from(document.querySelectorAll('input[name="emotion"]:checked')).map(el=>el.value);currentThought.emotionIntensity=parseInt(document.getElementById('emotionIntensity').value);break;case 4:currentThought.distortions=Array.from(document.querySelectorAll('input[name="distortion"]:checked')).map(el=>el.value);break;case 5:currentThought.evidenceFor=document.getElementById('evidenceFor').value;currentThought.evidenceAgainst=document.getElementById('evidenceAgainst').value;break;case 6:currentThought.reframe=document.getElementById('reframe').value;currentThought.beliefRating=parseInt(document.getElementById('beliefRating').value);break}}function saveThoughtRecord(){saveCurrentStepData(6);currentThought.timestamp=new Date().toISOString();let records=JSON.parse(localStorage.getItem('thoughtRecords')||'[]');records.unshift(currentThought);if(records.length>50){records=records.slice(0,50)}localStorage.setItem('thoughtRecords',JSON.stringify(records));showSummary();nextStep(7);localStorage.removeItem('thoughtDraft')}function showSummary(){const summaryCard=document.getElementById('summaryCard');const distortionNames={'all-or-nothing':'All-or-Nothing Thinking','catastrophizing':'Catastrophizing','mind-reading':'Mind Reading','overgeneralization':'Overgeneralization','personalization':'Personalization','should-statements':'"Should" Statements','emotional-reasoning':'Emotional Reasoning','fortune-telling':'Fortune Telling'};let html=`<h4>Situation</h4><p>${currentThought.situation||'Not specified'}</p><h4>Initial Thoughts</h4><p>${currentThought.thoughts||'Not specified'}</p><h4>Emotions (Intensity: ${currentThought.emotionIntensity}/10)</h4><p>${currentThought.emotions.length>0?currentThought.emotions.join(', '):'Not specified'}</p>`;if(currentThought.distortions.length>0){html+=`<h4>Thinking Traps Identified</h4><ul>${currentThought.distortions.map(d=>`<li>${distortionNames[d]}</li>`).join('')}</ul>`}html+=`<h4>Balanced Perspective</h4><p>${currentThought.reframe||'Not specified'}</p><h4>Belief in New Thought</h4><p>${currentThought.beliefRating}/10</p>`;summaryCard.innerHTML=html}function startNewThought(){currentThought={situation:'',thoughts:'',emotions:[],emotionIntensity:5,distortions:[],evidenceFor:'',evidenceAgainst:'',reframe:'',beliefRating:5,timestamp:null};document.getElementById('situation').value='';document.getElementById('thoughts').value='';document.querySelectorAll('input[name="emotion"]').forEach(el=>el.checked=false);document.getElementById('emotionIntensity').value=5;document.getElementById('intensityValue').textContent=5;document.querySelectorAll('input[name="distortion"]').forEach(el=>el.checked=false);document.getElementById('evidenceFor').value='';document.getElementById('evidenceAgainst').value='';document.getElementById('reframe').value='';document.getElementById('beliefRating').value=5;document.getElementById('beliefValue').textContent=5;document.querySelectorAll('.step').forEach(step=>{step.classList.remove('active')});document.querySelector('[data-step="1"]').classList.add('active');localStorage.removeItem('thoughtDraft');window.scrollTo({top:0,behavior:'smooth'})}function saveDraft(){localStorage.setItem('thoughtDraft',JSON.stringify(currentThought))}function loadDraft(){const draft=localStorage.getItem('thoughtDraft');if(draft){try{currentThought=JSON.parse(draft);if(currentThought.situation){document.getElementById('situation').value=currentThought.situation}if(currentThought.thoughts){document.getElementById('thoughts').value=currentThought.thoughts}if(currentThought.emotions.length>0){currentThought.emotions.forEach(emotion=>{const checkbox=document.querySelector(`input[name="emotion"][value="${emotion}"]`);if(checkbox)checkbox.checked=true})}if(currentThought.emotionIntensity){document.getElementById('emotionIntensity').value=currentThought.emotionIntensity;document.getElementById('intensityValue').textContent=currentThought.emotionIntensity}if(currentThought.distortions.length>0){currentThought.distortions.forEach(distortion=>{const checkbox=document.querySelector(`input[name="distortion"][value="${distortion}"]`);if(checkbox)checkbox.checked=true})}if(currentThought.evidenceFor){document.getElementById('evidenceFor').value=currentThought.evidenceFor}if(currentThought.evidenceAgainst){document.getElementById('evidenceAgainst').value=currentThought.evidenceAgainst}if(currentThought.reframe){document.getElementById('reframe').value=currentThought.reframe}if(currentThought.beliefRating){document.getElementById('beliefRating').value=currentThought.beliefRating;document.getElementById('beliefValue').textContent=currentThought.beliefRating}}catch(e){console.error('Error loading draft:',e)}}}function selectMood(mood){document.querySelectorAll('.mood-btn').forEach(btn=>{btn.classList.remove('selected')});event.target.closest('.mood-btn').classList.add('selected');document.getElementById('moodDetails').classList.remove('hidden');document.getElementById('moodDetails').dataset.selectedMood=mood}function saveMood(){const mood=document.getElementById('moodDetails').dataset.selectedMood;const note=document.getElementById('moodNote').value;if(!mood){alert('Please select a mood first');return}const moodEntry={mood:mood,note:note,timestamp:new Date().toISOString()};let moods=JSON.parse(localStorage.getItem('moods')||'[]');moods.unshift(moodEntry);if(moods.length>100){moods=moods.slice(0,100)}localStorage.setItem('moods',JSON.stringify(moods));document.querySelectorAll('.mood-btn').forEach(btn=>{btn.classList.remove('selected')});document.getElementById('moodNote').value='';document.getElementById('moodDetails').classList.add('hidden');loadMoodHistory();alert('Mood check-in saved! 💙')}function loadMoodHistory(){const moods=JSON.parse(localStorage.getItem('moods')||'[]');const moodList=document.getElementById('moodList');if(moods.length===0){moodList.innerHTML='<p style="color: var(--color-text-light); text-align: center;">No mood check-ins yet. Start tracking your emotional patterns!</p>';return}const moodEmojis={great:'😊',good:'🙂',okay:'😐',low:'😔',struggling:'😢'};const recentMoods=moods.slice(0,10);moodList.innerHTML=recentMoods.map(entry=>{const date=new Date(entry.timestamp);const formattedDate=formatDate(date);return`<div class="mood-entry"><div class="mood-entry-emoji">${moodEmojis[entry.mood]}</div><div class="mood-entry-content"><div class="mood-entry-mood">${entry.mood}</div><div class="mood-entry-date">${formattedDate}</div>${entry.note?`<div class="mood-entry-note">${entry.note}</div>`:''}</div></div>`}).join('')}function startBreathing(){const circle=document.getElementById('breathingCircle');const text=document.getElementById('breathingText');const btn=document.getElementById('breathingBtn');if(breathingState==='stopped'){breathingState='running';btn.textContent='Stop';runBreathingCycle(circle,text)}else{breathingState='stopped';btn.textContent='Start';circle.classList.remove('breathe-in','breathe-out');text.textContent='Click Start';if(breathingInterval){clearTimeout(breathingInterval)}}}function runBreathingCycle(circle,text){if(breathingState==='stopped')return;circle.classList.remove('breathe-out');circle.classList.add('breathe-in');text.textContent='Breathe in...';breathingInterval=setTimeout(()=>{if(breathingState==='stopped')return;text.textContent='Hold...';breathingInterval=setTimeout(()=>{if(breathingState==='stopped')return;circle.classList.remove('breathe-in');circle.classList.add('breathe-out');text.textContent='Breathe out...';breathingInterval=setTimeout(()=>{if(breathingState==='stopped')return;runBreathingCycle(circle,text)},4000)},2000)},4000)}const affirmations=["You are doing the best you can with what you know right now.","Your feelings are valid, and it's okay to feel them.","Progress, not perfection, is what matters.","You are stronger than your anxious thoughts.","This moment is temporary. You will get through this.","You deserve compassion, especially from yourself.","It's okay to take breaks and rest when you need to.","Your worth is not determined by your productivity.","You are allowed to change your mind and grow.","Small steps forward are still steps forward.","You don't have to have it all figured out right now.","It's brave to ask for help when you need it.","You are not your thoughts. You are the observer of your thoughts.","Every day is a new opportunity to begin again.","You are worthy of love and belonging, just as you are.","Your mental health matters, and taking care of it is strength.","You have survived 100% of your worst days so far.","Be patient with yourself. Growth takes time.","You are enough, exactly as you are in this moment.","It's okay to not be okay sometimes."];function newAffirmation(){const affirmationText=document.getElementById('affirmationText');const randomIndex=Math.floor(Math.random()*affirmations.length);affirmationText.textContent=`"${affirmations[randomIndex]}"`}function loadJournal(){const records=JSON.parse(localStorage.getItem('thoughtRecords')||'[]');const journalList=document.getElementById('journalList');if(records.length===0){journalList.innerHTML='<p style="color: var(--color-text-light); text-align: center;">No entries yet. Start by untangling a thought!</p>';return}const recentRecords=records.slice(0,20);journalList.innerHTML=recentRecords.map((record,index)=>{const date=new Date(record.timestamp);const formattedDate=formatDate(date);const preview=record.situation?record.situation.substring(0,100)+(record.situation.length>100?'...':''):'No situation described';return`<div class="entry-item" onclick="viewEntry(${index})"><div class="entry-header"><div class="entry-type">🧠 Thought Record</div><div class="entry-date">${formattedDate}</div></div><div class="entry-preview">${preview}</div></div>`}).join('')}function viewEntry(index){const records=JSON.parse(localStorage.getItem('thoughtRecords')||'[]');const record=records[index];if(!record)return;const distortionNames={'all-or-nothing':'All-or-Nothing Thinking','catastrophizing':'Catastrophizing','mind-reading':'Mind Reading','overgeneralization':'Overgeneralization','personalization':'Personalization','should-statements':'"Should" Statements','emotional-reasoning':'Emotional Reasoning','fortune-telling':'Fortune Telling'};const date=new Date(record.timestamp);const formattedDate=formatDate(date);let message=`📅 ${formattedDate}\n\n`;message+=`SITUATION:\n${record.situation||'Not specified'}\n\n`;message+=`THOUGHTS:\n${record.thoughts||'Not specified'}\n\n`;message+=`EMOTIONS (${record.emotionIntensity}/10):\n${record.emotions.length>0?record.emotions.join(', '):'Not specified'}\n\n`;if(record.distortions.length>0){message+=`THINKING TRAPS:\n`;record.distortions.forEach(d=>{message+=`• ${distortionNames[d]}\n`});message+='\n'}if(record.evidenceFor){message+=`EVIDENCE FOR:\n${record.evidenceFor}\n\n`}if(record.evidenceAgainst){message+=`EVIDENCE AGAINST:\n${record.evidenceAgainst}\n\n`}message+=`BALANCED PERSPECTIVE:\n${record.reframe||'Not specified'}\n\n`;message+=`BELIEF RATING: ${record.beliefRating}/10`;alert(message)}function loadStats(){const records=JSON.parse(localStorage.getItem('thoughtRecords')||'[]');const moods=JSON.parse(localStorage.getItem('moods')||'[]');document.getElementById('totalEntries').textContent=records.length;document.getElementById('totalMoods').textContent=moods.length;const streak=calculateStreak(records,moods);document.getElementById('streakDays').textContent=streak}function calculateStreak(records,moods){const allTimestamps=[...records.map(r=>r.timestamp),...moods.map(m=>m.timestamp)].sort((a,b)=>new Date(b)-new Date(a));if(allTimestamps.length===0)return 0;let streak=0;let currentDate=new Date();currentDate.setHours(0,0,0,0);for(let i=0;i<365;i++){const checkDate=new Date(currentDate);checkDate.setDate(checkDate.getDate()-i);const hasEntry=allTimestamps.some(timestamp=>{const entryDate=new Date(timestamp);entryDate.setHours(0,0,0,0);return entryDate.getTime()===checkDate.getTime()});if(hasEntry){streak=i+1}else if(i>0){break}}return streak}function exportData(){const records=JSON.parse(localStorage.getItem('thoughtRecords')||'[]');const moods=JSON.parse(localStorage.getItem('moods')||'[]');const data={thoughtRecords:records,moods:moods,exportDate:new Date().toISOString()};const dataStr=JSON.stringify(data,null,2);const dataBlob=new Blob([dataStr],{type:'application/json'});const url=URL.createObjectURL(dataBlob);const link=document.createElement('a');link.href=url;link.download=`untangle-data-${new Date().toISOString().split('T')[0]}.json`;link.click();URL.revokeObjectURL(url)}function confirmClearData(){if(confirm('Are you sure you want to delete all your data? This cannot be undone.')){if(confirm('Really sure? All your thought records and mood check-ins will be permanently deleted.')){localStorage.removeItem('thoughtRecords');localStorage.removeItem('moods');localStorage.removeItem('thoughtDraft');loadJournal();loadStats();loadMoodHistory();alert('All data has been cleared.')}}}function formatDate(date){const now=new Date();const diffMs=now-date;const diffMins=Math.floor(diffMs/60000);const diffHours=Math.floor(diffMs/3600000);const diffDays=Math.floor(diffMs/86400000);if(diffMins<1){return'Just now'}else if(diffMins<60){return`${diffMins} minute${diffMins>1?'s':''} ago`}else if(diffHours<24){return`${diffHours} hour${diffHours>1?'s':''} ago`}else if(diffDays<7){return`${diffDays} day${diffDays>1?'s':''} ago`}else{return date.toLocaleDateString('en-US',{year:'numeric',month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'})}}
+    </script>
+</body>
+</html>
